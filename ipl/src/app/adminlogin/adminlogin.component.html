@@ -1,0 +1,30 @@
+<div style="background-color: aqua">
+<div style="text-align: center;color: blue;">
+    <h1>Admin Login</h1>
+</div>
+<div class="container">
+    <form #adminlogin="ngForm" (ngSubmit)="submit(adminlogin)">
+        <div class="form-group">
+            <label>Admin Email</label>
+            <input #email="ngModel" [(ngModel)]="adminEmail" [ngModelOptions]="{standalone:true}" required type="email" class="form-control" id="adminemail" placeholder="Enter Admin Email" ngModel name="adminemail">
+            <div *ngIf="email.touched && email.errors?.['required']" class="alert alert-danger">
+                Email is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Admin Password</label>
+            <input #pass="ngModel" [(ngModel)]="adminPassword" [ngModelOptions]="{standalone:true}" required type="password"  class="form-control" id="adminpass" placeholder="Enter Admin Password" ngModel name="adminpass">
+            <div *ngIf="pass.touched && pass.errors?.['required']" class="alert alert-danger">
+                Password is required
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Admin Login</button>&nbsp;
+        <span>New Admin ?</span> &nbsp;
+        <button class="btn btn-primary" (click)="onRegister()">Register</button>&nbsp;&nbsp;
+        <a routerLink="/front" class="btn btn-primary" routerLinkActive="active">Back</a>
+
+
+    
+    </form>
+</div>
+</div>

@@ -1,0 +1,24 @@
+<div style="text-align: center;color: blue;">
+    <h1>Assign</h1>
+</div>
+<div class="container">
+    <form #assign="ngForm" (ngSubmit)="submit(assign)">
+        <div class="form-group"> 
+            <label>Select Team Name</label> 
+                <select #atname="ngModel" [(ngModel)]="tname" required class="form-control" id="atname" placeholder="Select TeamName" ngModel name="atname">
+                                         <option value="0">--Select Team--</option>  
+                                         <option *ngFor="let team of teams"  
+                                                 value={{team.tname}}>  
+                                             {{team.tname}}  
+                                         </option>  
+                </select>  
+        </div>   
+        <div class="form-group">
+            <label>Player Name</label>
+            <input #apname="ngModel" [(ngModel)]="pname" required type="text" class="form-control" id="apname" placeholder="Enter PlayerName" ngModel name="apname">
+        </div> 
+        <button type="submit" class="btn btn-primary">Assign</button>&nbsp;
+        <a routerLink="/userdashboard" class="btn btn-primary" routerLinkActive="active">Back</a>
+
+    </form>
+</div> 

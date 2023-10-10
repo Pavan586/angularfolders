@@ -1,0 +1,26 @@
+<div style="text-align: center;color: blue;">
+    <h1>Admin Register Form</h1>
+</div>
+<div class="container">
+    <form #adminregister="ngForm" (ngSubmit)="submit(adminregister)">
+        <div class="form-group">
+            <label>Admin Email</label>
+            <input #email="ngModel" [(ngModel)]="aemail" [ngModelOptions]="{standalone:true}" required type="email" class="form-control" id="aemail" placeholder="Enter AdminEmail" ngModel name="aemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <div *ngIf="email.touched && email.errors?.['required']" class="alert alert-danger">
+                Email is required
+            </div>
+            <div *ngIf="email.touched && email.errors?.['pattern']" class="alert alert-danger">
+                Email is not a valid
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Admin Password</label>
+            <input #pass="ngModel" [(ngModel)]="apassword" [ngModelOptions]="{standalone:true}" type="password" required class="form-control" id="password" placeholder="Enter Admin Password" ngModel name="apassword">
+            <div *ngIf="pass.touched && pass.errors?.['required']" class="alert alert-danger">
+                Password is required
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>&nbsp;
+    </form>
+</div>
+  

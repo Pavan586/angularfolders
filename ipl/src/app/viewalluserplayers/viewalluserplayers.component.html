@@ -1,0 +1,29 @@
+<div style="text-align: center;color: blue;">
+    <h1>All Players</h1>
+  </div>
+  <a routerLink="/userdashboard" class="btn btn-primary" routerLinkActive="active">Back</a>
+
+<div>
+    <table class="table table-bordered" style="background-color: mediumpurple;">
+        <thead>
+            <th>Player Id</th>
+            <th>Player Name</th>
+            <th>Player Email</th>
+            <th>Player Category</th>
+            <th>Player Country</th>
+            <th>Player Age</th>
+            <th>Player Budget</th>
+        </thead>
+        <tbody *ngFor="let p of players">
+            <tr class="table-info">
+                <td>{{p.pid}}</td>
+                <td>{{p.pname}}</td>
+                <td>{{p.pemail}}</td>
+                <td>{{p.pcategory}}</td>
+                <td>{{p.pcountry}}</td>
+                <td>{{p.page}}</td>
+                <td>{{p.pbudget}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

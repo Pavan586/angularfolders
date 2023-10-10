@@ -1,0 +1,24 @@
+ul {
+    list-style-type: disc;
+    margin: 10px 10px;
+    padding: 10px 12px;
+    overflow: hidden;
+    background-color: brown;
+    width:100%;
+    left:0;
+}
+li {
+    float: left;
+    display: inline-flex;
+    padding: 10px;
+}
+nav-container ul li {
+    width: 20%;
+}
+img {
+    max-width:100%;
+    width: 1300px;
+    height:440px;
+    float:left;
+    margin-left: 0%;
+}
